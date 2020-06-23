@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>My Repos</h1>
+{% for repo in repos %}
+
+<h2>
+    <a href="{{ repo.url }}">
+        {{ repo.name }}
+    </a>
+</h2>
+
+<p class="date">
+{{ repo.description}}
+</p>
+
+{% endfor %}
+
+{% endblock %}
