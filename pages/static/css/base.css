@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    /* margin: 0; */
+  
   }
   
   body{
@@ -9,9 +11,17 @@
 
 
 .greeting {
-   font-size: 62.5px;
+   font-size: 3rem;
   color: rgb(255, 255, 255);
 }
+@media (max-width:600px) {
+  .greeting {
+    padding-top: 10px;
+    font-size: 2rem;
+   color: rgb(255, 255, 255);
+ }
+}
+
 .intro {
   font-size: 23.333px;
   color: #ffffff;
@@ -152,3 +162,58 @@
       overflow-y: auto;
     }
   }
+
+
+  .card {
+    margin: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: start;
+    background-color: #ffffff4f;
+    box-shadow: 0px 0px 6px 1px #3d3d3d27;
+    border-radius: 3px;
+    padding: 5px;
+    max-width: 360px;
+  }
+
+
+
+.card-title {
+    font-size: 2rem;
+
+}
+
+
+.card-title > a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.card-body {
+padding: 5px;
+
+}
+
+.date {
+  opacity: 0.6;
+  margin: 0;
+  font-size: 1rem;
+}
+.tags > a {
+  text-decoration: none;
+
+}
+
+
+.body {
+  font-size: 1.3rem;
+} 
+
+
+
+
+form {
+  width: 300px;
+  display: flex;
+  flex-flow: column;
+}

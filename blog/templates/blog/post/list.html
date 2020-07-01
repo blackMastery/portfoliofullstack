@@ -1,20 +1,57 @@
 {% extends "base.html" %}
+{% load blog_tags %}
 {% block title %}My Blog{% endblock %}
 {% block content %}
-<h1>My Blog</h1>
-{% for post in posts %}
+<section style="padding-top: 70px;">
+    
+    <div class="container-fluid">
+        <h1>Blogs </h1>
+    <div class="row">
 
-<h2>
-    <a href="{{ post.get_absolute_url }}">
-        {{ post.title }}
-    </a>
-</h2>
-<p class="date">
-Published {{ post.publish }} by {{ post.author }}
-</p>
-{{ post.body|truncatewords:30|linebreaks }}
+    {% for post in posts %}
+    <div class="col-md-4">
+        <div class="card">
+
+    <div class="card-title" >
+        <a href="{{ post.get_absolute_url }}">
+            {{ post.title }}
+        </a>
+    </div>
+
+    <p class="tags">
+
+        Tags: {% for tag in post.tags.all %}
+        <a href="#">
+        {{ tag.name }}
+        </a>
+        {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+    <p class="date">
+        Published {{ post.publish }} by {{ post.author }}
+    </p>
+    <div class="card-body">
+        {{ post.body|markdown|truncatewords_html:30 }}
+
+    </div>
+
+    </div>
+    </div>
 
 {% endfor %}
 
-{% include "pagination.html" with page=posts %}
+
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <p>
+            {% include "pagination.html" with page=posts %}
+        </p>
+    </div>
+</div>
+
+</div>
+
+</section>
+
 {% endblock %}

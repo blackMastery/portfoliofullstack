@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateResponseMixin, View
 from django.shortcuts import render
+from .forms import ProjectForm
 
 # Create your views here.
 
@@ -20,9 +21,12 @@ class Index(View):
 
 class Contact(View):
     template_name = 'pages/contact/contact.html'
+    projectform = ProjectForm()
 
     def get(self, request):
-        return render(request, self.template_name)
+        print(request.session.session_key)
+        return render(request, self.template_name, {'projectform': self.projectform})
+    
 
 
 

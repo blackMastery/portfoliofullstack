@@ -3,6 +3,8 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 # Create your models here.
 from django.urls import reverse
+from taggit.managers import TaggableManager
+
 class PublishedManager(models.Manager):
     def get_queryset(self):
         return super(PublishedManager,self).get_queryset().filter(status='published')
@@ -11,7 +13,7 @@ class PublishedManager(models.Manager):
 class Post(models.Model):
     objects = models.Manager() # The default manager.
     published = PublishedManager() # Our custom manager.
-
+    tags = TaggableManager()
     STATUS_CHOICES = (
     ('draft', 'Draft'),
     ('published', 'Published'),

@@ -1,11 +1,18 @@
+{% load blog_tags %}
 {% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
 <title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="{% static "css/flexboxgrid.css" %}" rel="stylesheet">
 <link href="{% static "css/base.css" %}" rel="stylesheet">
+<link href="{% static "css/style.css" %}" rel="stylesheet">
+
+<link href="{% static "jquery.js" %}" rel="stylesheet">
+
+
 
 </head>
 <body>
@@ -19,7 +26,7 @@
           </div>
         </div>
         <div class="appbar-btn">
-          <label htmlFor="appbar-check">
+          <label for="appbar-check">
             <span></span>
             <span></span>
             <span></span>
@@ -31,19 +38,8 @@
         <a href="{% url "contact" %}" >
           Contact
         </a>
-      
-      
-        <a href="{% url "projects" %}" >
-          Projects
-        </a>
-      
-
         <a href="{% url "repos:repo_list" %}" >
           Repos
-        </a>
-
-         <a href="{% url "services" %}" >
-          Service
         </a>
 
         <a href="{% url "blog:post_list" %}" >
@@ -56,7 +52,7 @@
 
 
 
-<div id="mainflow">
+<div id="mainflow" >
 {% block content %}
 {% endblock %}
 </div>
@@ -64,7 +60,12 @@
 
 
 
+<footer style="background-color:#0242a5; color:white; height: 200px;" >
+<div class="row">
 
+</div>
+
+</footer>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/
@@ -83,6 +84,22 @@ jquery-ui.min.js"></script>
 <script>
 $(document).ready(function() {
 {% block domready %}
+
+// $( ".card" ).hover(function() {
+//   $( this ).animate({
+//     width: "toggle",
+//     height: "toggle"
+//   }, {
+//     duration: 5000,
+//     specialEasing: {
+//       width: "linear",
+//       height: "easeOutBounce"
+//     },
+//     complete: function() {
+//       $( this ).after( "<div>Animation complete.</div>" );
+//     }
+//   });
+// });
 
 
 {% endblock %}

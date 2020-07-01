@@ -1,18 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>My Repos</h1>
-{% for repo in repos %}
+<section style="padding-top: 70px;">
 
-<h2>
-    <a href="{{ repo.url }}">
-        {{ repo.name }}
-    </a>
-</h2>
+    
+<div class="container-fluid">
+    <h1>My Repos</h1>
+    
+    <div class="row">
+        {% for repo in repos %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-title">
+                            <a href="{{ repo.url }}" target="_blank">
+                                {{ repo.name }}
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            {{ repo.description}}
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
 
-<p class="date">
-{{ repo.description}}
-</p>
+</div>
+    
+    {% include "repos/pagination.html" with page=repos %}
+</div>
+    
+    
 
-{% endfor %}
+</section>
 
 {% endblock %}

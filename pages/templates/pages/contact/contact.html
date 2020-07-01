@@ -11,6 +11,23 @@
             </center>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-xs-4">
+            <h2>
+                Please Me Your Project Detials
+            </h2>
+            <p>To get a free estimate</p>
+
+            <form action="" method="post">
+                {% csrf_token %}
+                {{projectform}}
+            </form>
+        </div>
+
+        <div class="col-xs-8">
+        </div>
+    </div>
 </div>
 
 {% endblock %}
