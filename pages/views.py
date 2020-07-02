@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateResponseMixin, View
 from django.shortcuts import render
 from .forms import ProjectForm
+from .models import Intros
 
 # Create your views here.
 
@@ -13,7 +14,8 @@ class Index(View):
     template_name = 'pages/index.html'
 
     def get(self, request):
-        return render(request, self.template_name, {"intro": self.intro})
+        self.intro =  Intros.objects.filter(status='published')
+        return render(request, self.template_name, {"intro": self.intro[0].statement})
 
 
 

@@ -6,6 +6,9 @@
   
   body{
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+
 
   }
 
@@ -187,6 +190,8 @@
 
 .card-title > a {
   text-decoration: none;
+  font-weight: bold;
+
   text-transform: capitalize;
 }
 .card-body {
@@ -204,7 +209,6 @@ padding: 5px;
 
 }
 
-
 .body {
   font-size: 1.3rem;
 } 
@@ -217,3 +221,61 @@ form {
   display: flex;
   flex-flow: column;
 }
+
+
+
+
+.side-menu {
+  /* width: 360px; */
+  background: #343131;
+}
+
+
+.side-body  > p > a{
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  
+  }
+  
+  
+  .side-item{
+      padding: 0px;
+      height: fit-content;
+      display: flex;
+      text-transform: capitalize;
+      align-items: center;
+      padding: 0px 10px 0px 10px;
+  }
+  .side-item:hover {
+  
+      background-color: rgba(153, 147, 147, 0.568);
+  }
+  
+  body{
+      padding:0;
+      font-family: 'Montserrat', sans-serif;
+  }
+  
+
+  
+  .side-head {
+      font-weight: 700;
+  
+      background-color: #2980B9;
+      color: rgb(255, 255, 255);
+      height: 80px;
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.9rem;
+  
+  
+  }
+  
+  .side-footer {
+      color: rgb(255, 255, 255);
+      padding: 0px 10px 10px 10px;
+  
+  }

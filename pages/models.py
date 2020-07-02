@@ -13,3 +13,24 @@ class Project(models.Model):
     class Meta:
         ordering = ['budget']
 
+
+
+
+
+class Intros(models.Model):
+    STATUS_CHOICES = (
+    ('draft', 'Draft'),
+    ('published', 'Published'),
+    )
+    statement = models.CharField(max_length=1000)
+    slug = models.SlugField(max_length=250,
+    unique_for_date='publish')
+    publish = models.DateTimeField(default=timezone.now)
+
+    status = models.CharField(max_length=10,
+    choices=STATUS_CHOICES,
+    default='draft')
+
+         
+    def __str__(self):
+        return self.statement

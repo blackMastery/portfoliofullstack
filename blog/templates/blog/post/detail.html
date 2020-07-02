@@ -7,20 +7,31 @@
 <section style="padding-top: 70px;">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-2">
-                <h2>Similar posts</h2>
-                {% for post in similar_posts %}
-                <p>
-                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-                </p>
-                {% empty %}
-                There are no similar posts yet.
-                {% endfor %}
+            <div style="padding:0;" class="col-xs-3 side-menu">
+                <div class="side-head">
+                    Similar Posts
 
-                <h3>last updated</h3>
-                <p>{{ post.updated }}</p>
+                </div>
+                <div class="side-body">
+                    {% for post in similar_posts %}
+                    <p class="side-item">
+                        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                    </p>
+                    {% empty %}
+                    
+                    <p style="color:white">
+                        There are no similar posts yet.
+                    </p>
+                    {% endfor %}
+                </div>
+                <div class="side-footer">
+                    <h3>last updated</h3>
+                    <p>{{ post.updated }}</p>
+
+                </div>
             </div>
-            <div class="col-xs-10">
+
+            <div class="col-xs-9">
 
                 <h1 >{{ post.title }}</h1>
                 <p class="date">
