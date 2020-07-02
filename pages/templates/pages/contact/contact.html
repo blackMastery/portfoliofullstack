@@ -13,19 +13,21 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-4">
+        <div class="col-md-4 col-xs-12">
             <h2>
-                Please Me Your Project Detials
+                Send Me Your Project Detials
             </h2>
             <p>To get a free estimate</p>
 
-            <form action="" method="post">
+            <form action="" method="post" class="z-depth-1 contact-form">
                 {% csrf_token %}
                 {{projectform}}
+                <input type="submit" value="Submit" class="btn blue darken-4">
             </form>
         </div>
 
-        <div class="col-xs-8">
+        <div class="col-md-8 col-xs-12">
+            <h2>{{ thanks }}</h2>
         </div>
     </div>
 </div>

@@ -164,6 +164,16 @@
       height: calc(100vh - 50px);
       overflow-y: auto;
     }
+
+
+
+
+
+  .side-menu{
+    display: none; 
+  }
+
+  
   }
 
 
@@ -231,11 +241,10 @@ form {
 }
 
 
-.side-body  > p > a{
+.side-body  > p > a {
   color: white;
   font-weight: 700;
   text-decoration: none;
-  
   }
   
   
@@ -278,4 +287,21 @@ form {
       color: rgb(255, 255, 255);
       padding: 0px 10px 10px 10px;
   
+  }
+
+
+
+  .contact-form {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 300px;
+  }
+
+
+
+  .side-menu{
+
   }

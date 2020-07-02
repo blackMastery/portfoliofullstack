@@ -3,6 +3,7 @@ from django.views.generic.base import TemplateResponseMixin, View
 from django.shortcuts import render
 from .forms import ProjectForm
 from .models import Intros
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -28,6 +29,28 @@ class Contact(View):
     def get(self, request):
         print(request.session.session_key)
         return render(request, self.template_name, {'projectform': self.projectform})
+
+
+    def post(self, request):
+
+        form = ProjectForm(request.POST) 
+        if form.is_valid():
+            cd =  form.cleaned_data
+            form.save()
+            subject  = cd['title']
+            budget =  cd['budget']
+            description =  cd['description']
+            thanks_mesage =  "Thanhs, looking forward to working with you"
+
+
+            message = "budget: {} Description: {}".format(budget, description)
+
+            send_mail(subject, message,'black.king1232@gmail.com', recipient_list=['kev.cadogan300@gmail.com'], fail_silently=False)
+            return render(request, self.template_name, {'projectform': self.projectform,
+             'thanks': thanks_mesage})
+
+
+
     
 
 
