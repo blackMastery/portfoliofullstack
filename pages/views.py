@@ -27,7 +27,6 @@ class Contact(View):
     projectform = ProjectForm()
 
     def get(self, request):
-        print(request.session.session_key)
         return render(request, self.template_name, {'projectform': self.projectform})
 
 
@@ -45,7 +44,7 @@ class Contact(View):
 
             message = "budget: {} Description: {}".format(budget, description)
 
-            send_mail(subject, message,'black.king1232@gmail.com', recipient_list=['kev.cadogan300@gmail.com'], fail_silently=False)
+            send_mail(subject, message,'black.king1232@gmail.com', recipient_list=['b'], fail_silently=False)
             return render(request, self.template_name, {'projectform': self.projectform,
              'thanks': thanks_mesage})
 

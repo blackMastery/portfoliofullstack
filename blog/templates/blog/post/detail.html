@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load social_share %}
+
 {% load blog_tags %}
 {% block title %}{{ post.title }}{% endblock %}
 {% block content %}
@@ -27,12 +29,23 @@
                 <div class="side-footer">
                     <h3>last updated</h3>
                     <p>{{ post.updated }}</p>
+                    <p>
+                        {% post_to_facebook object_or_url "Share on Facebook!"  %}
+                    </p>
+                    <p>
+                        {% post_to_twitter object_or_url "Share on Twitter" %}
+                    </p>
+                    <p>
+                        {% post_to_reddit  object_or_url "Share on Reddit" %}
+                    </p>
+
+
 
                 </div>
             </div>
-
+            
             <div class="col-md-9 col-xs-12">
-
+                
                 <h1 >{{ post.title }}</h1>
                 <p class="date">
                     Published {{ post.publish }} by {{ post.author }}
@@ -43,9 +56,10 @@
                     </p>
                 </div>
                 
+             
+
             </div>    
         </div>
-  </div>    
+    </div>    
 </section>
-
 {% endblock %}
