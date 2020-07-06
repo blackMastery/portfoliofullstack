@@ -11,7 +11,7 @@ from django.core.mail import send_mail
 
 
 class Index(View):
-    intro = "I am a  full-stack developer with an eye for detail, building client and server application for five years, with the diverse skill from HTML and javascript, with frameworks like react and angular to django, mysql, mongodb etc. With a sound agile project management discipline from years of building client-server application, there is very little that we cannot achieve in a timely manner"
+    intro = None
     template_name = 'pages/index.html'
 
     def get(self, request):
@@ -39,7 +39,7 @@ class Contact(View):
             subject  = cd['title']
             budget =  cd['budget']
             description =  cd['description']
-            thanks_mesage =  "Thanhs, looking forward to working with you"
+            thanks_mesage =  "Thank you, I'm looking forward to working with you"
 
 
             message = "budget: {} Description: {}".format(budget, description)
