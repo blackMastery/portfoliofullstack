@@ -56,6 +56,7 @@ INSTALLED_APPS = [
 INSTALLED_APPS += ['django_social_share']
 
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',

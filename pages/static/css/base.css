@@ -4,6 +4,12 @@
   
   }
   
+
+
+:root {
+  --primary-blue: #0242a5;
+  --gray-primary: #343131;
+}
   body{
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -73,7 +79,7 @@
     height: 50px;
     z-index:1;
     width: 100%;
-    background-color: #0D47A1;
+    background-color: var(--primary-blue);
     position: relative;
     box-shadow: 0px 3px 4.65px 0.35px rgba(35, 34, 34, 0.27);
     position:fixed;
@@ -271,7 +277,7 @@ form {
   .side-head {
       font-weight: 700;
   
-      background-color: #2980B9;
+      background-color: var(--primary-blue);
       color: rgb(255, 255, 255);
       height: 80px;
       display: flex;
@@ -302,6 +308,38 @@ form {
 
 
 
-  .side-menu{
 
+
+  code{
+        
+    background-color: var(--primary-blue) ;
+    min-width: 300px;
+    width: 100%;
+    max-height: 300px;
+    color: white;
+    font-size: 1rem;
+    display: block;
+    overflow-x: auto;
+    margin: 0;
+
+    font-family: Operator Mono A,Operator Mono B,Source Code Pro,Menlo,Consolas,Monaco,monospace;
+
+}
+
+pre {
+    margin: 0;
+    tab-size: 2;
+    overflow-x: auto;
+    min-width: 300px;
+    width: 100%;
+    /* max-height: 300px; */
+}
+
+pre::before { 
+  
+  padding:5px;
+    border-radius: 2px;
+    color:white;
+    content: 'python'; display: block; 
+    background-color: var(--gray-primary); 
   }
