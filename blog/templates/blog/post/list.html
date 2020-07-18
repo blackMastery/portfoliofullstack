@@ -10,7 +10,7 @@
 
     {% for post in posts %}
     <div class="col-md-4">
-        <div class="card">
+        <div class="card animate__animated animate__fadeIn animate__slow">
 
     <div class="card-title" >
         <a href="{{ post.get_absolute_url }}">
@@ -48,6 +48,8 @@
         <p>
             {% include "pagination.html" with page=posts %}
         </p>
+       <hr>
+
     </div>
 </div>
 

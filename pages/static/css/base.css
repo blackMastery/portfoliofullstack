@@ -171,15 +171,15 @@
       overflow-y: auto;
     }
 
-
-
-
-
   .side-menu{
     display: none; 
   }
 
-  
+  .title {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
   }
 
 
@@ -202,6 +202,9 @@
     font-size: 2rem;
 
 }
+
+
+
 
 
 .card-title > a {
@@ -308,10 +311,13 @@ form {
 
 
 
+pre > code{
+  font-size: 1rem;
 
+}
 
   code{
-        
+
     background-color: var(--primary-blue) ;
     min-width: 300px;
     width: 100%;
@@ -320,9 +326,10 @@ form {
     display: block;
     overflow-x: auto;
     margin: 0;
-    font-size: small;
-    font-weight: 200;
+    font-weight: 100;
+    padding: 10px;
 
+    border-radius: 1px;
     font-family: Operator Mono A,Operator Mono B,Source Code Pro,Menlo,Consolas,Monaco,monospace;
 
 }
@@ -338,7 +345,7 @@ pre {
 
 pre::before { 
     padding:5px;
-    border-radius: 2px;
+    border-radius: 1px;
     color:white;
     content: 'python';
      display: block; 

@@ -9,7 +9,7 @@
     <div class="row">
         {% for repo in repos %}
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card animate__animated animate__fadeIn animate__slow">
                         <div class="card-title">
                             <a href="{{ repo.url }}" target="_blank">
                                 {{ repo.name }}
@@ -22,10 +22,13 @@
                 </div>
         {% endfor %}
 
-</div>
+    </div>
     
+<hr>
     {% include "repos/pagination.html" with page=repos %}
+ <hr>
 </div>
+
     
     
 
