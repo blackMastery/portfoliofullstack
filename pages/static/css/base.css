@@ -317,10 +317,11 @@ form {
     width: 100%;
     max-height: 300px;
     color: white;
-    font-size: 1rem;
     display: block;
     overflow-x: auto;
     margin: 0;
+    font-size: small;
+    font-weight: 200;
 
     font-family: Operator Mono A,Operator Mono B,Source Code Pro,Menlo,Consolas,Monaco,monospace;
 
@@ -336,10 +337,10 @@ pre {
 }
 
 pre::before { 
-  
-  padding:5px;
+    padding:5px;
     border-radius: 2px;
     color:white;
-    content: 'python'; display: block; 
+    content: 'python';
+     display: block; 
     background-color: var(--gray-primary); 
   }
