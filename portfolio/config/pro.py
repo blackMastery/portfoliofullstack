@@ -28,6 +28,10 @@ ALLOWED_HOSTS = ['shrouded-woodland-74637.herokuapp.com', '127.0.0.1']
 #     }
 # }
 
+
+
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
@@ -36,3 +40,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # The URL to use when referring to static files (where they will be served from)
 STATIC_URL = '/static/'
+
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+
+
+SENDGRID_API_KEY = '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'
+SENDGRID_SANDBOX_MODE_IN_DEBUG=False
+
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
