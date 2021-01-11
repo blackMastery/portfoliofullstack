@@ -146,5 +146,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = '/static/'
+
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+
+
+SENDGRID_API_KEY = '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'
+SENDGRID_SANDBOX_MODE_IN_DEBUG=False

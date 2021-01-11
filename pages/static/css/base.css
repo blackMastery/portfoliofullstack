@@ -327,10 +327,13 @@ form {
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-    height: 300px;
+    height: 450px;
   }
 
-
+  .contact-form > textarea {
+      height: 30rem;
+  
+  }
 
 pre > code{
   font-size: 1rem;
