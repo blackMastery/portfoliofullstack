@@ -7,7 +7,10 @@ from .models import Post
 
 class PostAdmin(admin.ModelAdmin):
     class Media:
-        js = ('main.js',)
+        css = {
+            "all": ('css/prism.css',)
+        }
+        js = ('main.js','js/prism.js',)
     list_display = ('title', 'slug', 'author', 'publish', 'status')
     list_filter = ('status', 'created', 'publish', 'author')
     search_fields = ('title', 'body')
