@@ -1,4 +1,4 @@
-name: nexus email schedule
+name: login on push
 on: [push]
 
      # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -10,12 +10,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Deploy Stage
-      uses: fjogeleit/http-request-action@v1
-      id: myRequest
-      with:
-        url: 'https://9f7b-190-108-214-63.ngrok.io/sendEmail'
-        method: 'POST'
-
-    - name: Show Response
-      run: echo ${{ steps.myRequest.outputs.response }}
+    - name: Invoke deployment hook
+      uses: distributhor/workflow-webhook@v2
+      env:
+        webhook_url: 'https://9f7b-190-108-214-63.ngrok.io/sendEmail'
+        webhook_secret: 'supersecret'
+        data: '{ "weapon": "hammer", "drink" : "beer" }'
